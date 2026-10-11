@@ -1,7 +1,4 @@
+import { Catalogue } from "@/components/catalogue";
 export default function Home() {
-  return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Constructor Template</h1>
-    </main>
-  );
+  return <Catalogue />;
 }

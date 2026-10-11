@@ -1,33 +1,90 @@
 @import "tailwindcss";
-
-@theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.145 0 0);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.145 0 0);
-  --color-primary: oklch(0.205 0 0);
-  --color-primary-foreground: oklch(0.985 0 0);
-  --color-secondary: oklch(0.97 0 0);
-  --color-secondary-foreground: oklch(0.205 0 0);
-  --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
-  --color-accent: oklch(0.97 0 0);
-  --color-accent-foreground: oklch(0.205 0 0);
-  --color-destructive: oklch(0.577 0.245 27.325);
-  --color-border: oklch(0.922 0 0);
-  --color-input: oklch(0.922 0 0);
-  --color-ring: oklch(0.708 0 0);
+@theme inline {
+  --color-harina: #f5f7fa;
+  --color-tinta: #192d3a;
+  --color-obrador: #2459a6;
+  --color-agua: #dfeaf4;
+  --color-corteza: #865325;
+  --color-error: #b42332;
+  --color-background: #f5f7fa;
+  --color-foreground: #192d3a;
+  --color-primary: #2459a6;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #dfeaf4;
+  --color-secondary-foreground: #192d3a;
+  --color-accent: #dfeaf4;
+  --color-accent-foreground: #192d3a;
+  --color-border: #c6d3df;
+  --color-input: #a3b5c6;
+  --color-ring: #2459a6;
+  --font-sans: var(--font-body), sans-serif;
+  --font-heading: var(--font-title), sans-serif;
   --radius: 0.5rem;
 }
-
 @layer base {
   * {
-    border-color: var(--color-border);
+    @apply border-border;
   }
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    @apply bg-harina text-tinta font-sans text-base antialiased;
+  }
+  button,
+  a,
+  input,
+  textarea {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-obrador;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button:not(:disabled),
+  a {
+    @apply cursor-pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-semibold tracking-[-0.045em];
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 140px;
+  }
+  ::selection {
+    @apply bg-agua text-obrador;
+  }
+}
+@layer utilities {
+  .photo-entry {
+    animation: photo-in 0.7s ease-out both;
+  }
+  .paper-grid {
+    background-image:
+      linear-gradient(#2459a609 1px, transparent 1px),
+      linear-gradient(90deg, #2459a609 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+@keyframes photo-in {
+  from {
+    opacity: 0.5;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }

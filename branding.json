@@ -1,0 +1,13 @@
+{
+  "primaryColor": "#F5F7FA",
+  "secondaryColor": "#DFEAF4",
+  "backgroundColor": "#F5F7FA",
+  "textColor": "#192D3A",
+  "accentColor": "#2459A6",
+  "fontHeading": "Bricolage Grotesque",
+  "fontBody": "Source Sans 3,",
+  "borderRadius": "0.5rem",
+  "logoText": "Panadería Miga",
+  "logoImageUrl": "https://vabacntbfcwhgkjqajcw.supabase.co/storage/v1/object/public/screenshots/projects/P-UP8U7N/logo.png",
+  "tone": "trustworthy"
+}
