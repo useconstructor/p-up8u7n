@@ -32,11 +32,11 @@ export default function RootLayout({
         <DraftProvider>
           <Header />
           {children}
-          <footer className="mx-auto flex max-w-[1328px] flex-wrap items-center justify-between gap-4 border-t px-6 pt-8 pb-28 text-sm md:px-12 md:pb-8">
+          <footer className="mx-auto flex max-w-[1328px] flex-wrap items-center justify-between gap-2 border-t border-obrador/15 px-5 py-5 text-sm md:px-10 lg:px-12">
             <span className="font-heading text-xl font-semibold tracking-tight">
               Miga. El pan, en primer plano.
             </span>
-            <span>Un catálogo para explorar. Un pedido para probar.</span>
+            <span className="text-tinta/65">Corteza, miga y un trozo más.</span>
           </footer>
         </DraftProvider>
       </body>

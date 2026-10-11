@@ -83,13 +83,11 @@ export function OrderPage() {
         <ArrowLeft size={17} />
         Volver a los panes
       </Link>
-      <p className="mb-1 text-sm text-obrador">Pedido de demostración</p>
       <h1 className="text-[32px] leading-tight md:text-5xl">
-        Un poco de esto,
-        <br className="hidden sm:block" /> un poco de pan.
+        Un poco de esto, un poco de pan.
       </h1>
       <p className="mt-4 mb-8 max-w-xl text-lg">
-        Revisa tu selección y guarda tu pedido de ejemplo.
+        Revisa los panes y completa tu pedido.
       </p>
       {loading ? (
         <div className="h-96 animate-pulse rounded-lg bg-agua" />
@@ -120,7 +118,7 @@ export function OrderPage() {
           </Button>
         </section>
       ) : (
-        <div className="grid items-start gap-8 md:grid-cols-2 lg:grid-cols-[1.1fr_1fr]">
+        <div className="grid items-start gap-8 min-[1100px]:grid-cols-[1.1fr_1fr]">
           <section aria-labelledby="selection-heading">
             <div className="mb-4 flex items-center justify-between">
               <h2 id="selection-heading" className="text-[26px] md:text-[28px]">
@@ -154,15 +152,11 @@ export function OrderPage() {
                 ) : null;
               })}
             </div>
-            <div className="mt-4">
-              <SaveStatus />
-            </div>
           </section>
           <section className="rounded-lg border border-obrador/15 bg-agua p-5 md:p-6 lg:p-8">
             <h2 className="text-[26px] md:text-[28px]">Tus datos de ejemplo</h2>
             <p className="mt-2 mb-6 text-base">
-              Usa datos ficticios. No se enviarán correos ni se preparará el
-              pedido.
+              Completa el formulario con un nombre y un correo ficticios.
             </p>
             <form onSubmit={submit} noValidate className="space-y-5">
               <div>
@@ -281,7 +275,7 @@ export function OrderPage() {
               </Button>
               <p className="flex items-start gap-2 text-sm">
                 <Check size={16} className="mt-0.5 shrink-0 text-obrador" />
-                Se guardará un ejemplo, sin pagos ni entrega.
+                Se guardará un ejemplo. No se enviarán correos ni se preparará el pedido.
               </p>
             </form>
           </section>

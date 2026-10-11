@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, ShoppingBag, Wheat } from "lucide-react";
+import { ArrowUpRight, ShoppingBag } from "lucide-react";
 import { useDraft } from "./draft-provider";
 export function Header() {
   const { draft, navigate } = useDraft();
@@ -9,7 +9,7 @@ export function Header() {
   const count = draft?.items.reduce((n, i) => n + i.quantity, 0) || 0;
   return (
     <header className="sticky top-0 z-40 border-b bg-harina/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[76px] max-w-[1328px] items-center justify-between px-5 md:px-12">
+      <div className="mx-auto flex h-[68px] max-w-[1328px] items-center justify-between px-5 md:px-10 lg:px-12">
         <Link
           href="/"
           onClick={(e) => {
@@ -19,14 +19,12 @@ export function Header() {
           aria-label="Miga, ir al catálogo"
           className="flex items-center gap-2 text-obrador"
         >
-          <Wheat size={29} strokeWidth={1.4} />
-          <span className="font-heading text-[38px] font-bold leading-none tracking-[-.07em]">
+          <svg width="28" height="36" viewBox="0 0 28 36" fill="none" aria-hidden="true"><path d="M14 33V9M14 25C6 25 3 21 3 16c7 0 11 3 11 9ZM14 18C7 18 5 14 5 9c6 0 9 3 9 9ZM14 25c8 0 11-4 11-9-7 0-11 3-11 9ZM14 18c7 0 9-4 9-9-6 0-9 3-9 9ZM14 10c-4-3-4-6 0-9 4 3 4 6 0 9Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/></svg>
+          <span className="font-heading text-[40px] font-bold leading-none tracking-[-.07em]">
             miga<span className="text-corteza">.</span>
           </span>
           <span className="ml-4 hidden border-l border-obrador/25 pl-4 text-sm text-tinta sm:block">
             Panadería
-            <br />
-            de ejemplo
           </span>
         </Link>
         <nav
@@ -64,8 +62,7 @@ export function Header() {
         </nav>
       </div>
       <div className="border-t border-obrador/10 bg-agua/70 px-4 py-2 text-center text-[12px] leading-4 sm:text-sm">
-        Negocio ficticio. Los pedidos son de demostración y no se preparan ni
-        entregan.
+        Miga es ficticia. Pedidos de ejemplo, sin pagos ni entrega.
       </div>
     </header>
   );

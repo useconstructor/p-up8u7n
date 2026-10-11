@@ -47,15 +47,11 @@ export default async function Page({
           <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-agua text-obrador">
             <Check size={30} strokeWidth={1.5} />
           </div>
-          <p className="mb-2 text-sm text-obrador">
-            Confirmación de demostración
-          </p>
           <h1 className="text-[32px] leading-tight md:text-5xl">
             Tu pedido está guardado.
           </h1>
           <p className="mt-4 mb-8 text-lg">
-            Un ejemplo de principio a fin. Puedes volver a consultarlo con tu
-            enlace privado.
+            Puedes volver a consultarlo con tu enlace privado.
           </p>
           <section className="overflow-hidden rounded-lg border">
             <div className="flex flex-wrap items-center justify-between gap-4 bg-agua px-6 py-5">

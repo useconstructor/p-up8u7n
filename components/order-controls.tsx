@@ -22,7 +22,7 @@ export function OrderControls({
       return;
     }
     setError("");
-    setValue(String(n));
+    setValue(null);
     update(
       {
         items: draft!.items.map((i) =>
@@ -36,6 +36,7 @@ export function OrderControls({
     <div className="space-y-2">
       {!item ? (
         <Button
+          id={`add-${product.id}`}
           disabled={!draft}
           onClick={() => {
             setValue(null);
@@ -48,6 +49,7 @@ export function OrderControls({
               },
               true,
             );
+            requestAnimationFrame(() => document.getElementById('quantity-' + product.id)?.focus({ preventScroll: true }));
           }}
           className="h-11 rounded-lg px-5 text-base font-semibold"
         >
@@ -59,7 +61,7 @@ export function OrderControls({
           <div
             className={`flex flex-wrap items-center gap-3 ${compact ? "" : "sm:gap-4"}`}
           >
-            <div className="flex overflow-hidden rounded-lg border border-obrador/30 bg-white">
+            <div className="flex rounded-lg border border-obrador/30 bg-white">
               <button
                 aria-label={`Reducir unidades de ${product.name}`}
                 disabled={item.quantity <= 1}
@@ -129,6 +131,7 @@ export function OrderControls({
                   },
                   true,
                 );
+                requestAnimationFrame(() => document.getElementById('add-' + product.id)?.focus({ preventScroll: true }));
               }}
               aria-label={`Quitar ${product.name} del pedido`}
               className="flex min-h-11 items-center gap-1 text-sm underline decoration-tinta/30 underline-offset-4 hover:text-error"
