@@ -3,11 +3,12 @@ import { ArrowRight, Check, Loader2, RotateCw, ShoppingBag } from "lucide-react"
 import { useDraft } from "./draft-provider";
 import { Button } from "./ui/button";
 export function SaveStatus() {
-  const { status, error, retry } = useDraft();
+  const { status, error, retry, draft } = useDraft();
+  const hasChanges = draft && (draft.version > 0 || draft.items.length > 0 || [draft.name, draft.email, draft.notes].some(value => value.trim()));
   return (
     <div className="text-sm" role="status" aria-live="polite">
       {status === "saving" ? <span className="flex items-center gap-1.5"><Loader2 size={14} className="animate-spin" />Guardando borrador…</span>
-      : status === "saved" ? <span className="flex items-center gap-1.5 text-obrador"><Check size={14} />Borrador guardado</span>
+      : status === "saved" ? hasChanges ? <span className="flex items-center gap-1.5 text-obrador"><Check size={14} />Borrador guardado</span> : <span className="text-tinta/65">Tu selección se guardará al añadir panes.</span>
       : status === "error" ? <div className="space-y-1 text-error"><p>{error}</p><button onClick={retry} className="flex min-h-11 items-center gap-2 underline"><RotateCw size={14} />Reintentar guardado</button></div>
       : <span>Cargando borrador…</span>}
     </div>

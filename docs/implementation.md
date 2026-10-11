@@ -8,10 +8,10 @@ Database configuration: TURSO_DATABASE_URL and TURSO_AUTH_TOKEN are server only.
 
 Limits: name 120 characters, email 254, observations 2000. Integer quantities 1–20. API body limit 16 KiB. No public listing or automatic deletion. Private responses use no-store, noindex, and no-referrer.
 
-Assets: original Wikimedia Commons photos downloaded and resized locally to WebP, with responsive object-fit crops. No generated imagery. The specific verified photograph requirement takes precedence over the conflicting generic placeholder instruction at the end of the build document.
+Assets: licensed Wikimedia Commons photographs downloaded and processed locally to WebP, with responsive object-fit crops. No generated imagery. The catalogue uses bright wood surfaces, close product framing and visible credits.
 
 - hogaza.webp: “Sourdough bread - January 2026 - Sarah Stierch 02.jpg”, Sarah Stierch (Missvain), CC0. https://commons.wikimedia.org/wiki/File:Sourdough_bread_-_January_2026_-_Sarah_Stierch_02.jpg
-- baguette.webp: “Baguette mie.jpg”, Popo le Chien, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Baguette_mie.jpg
-- semillas.webp: “Seeded bread (14018953083).jpg”, Jim Lukach, CC BY 2.0. https://commons.wikimedia.org/wiki/File:Seeded_bread_(14018953083).jpg
-  Photos downloaded at original resolution, resized to 2400px, and sharpened. Seeded bread has a light and saturation adjustment. Derived assets retain their corresponding licenses; attribution is visible in the catalogue. License terms: https://creativecommons.org/publicdomain/zero/1.0/ https://creativecommons.org/licenses/by-sa/4.0/ https://creativecommons.org/licenses/by/2.0/
+- baguette.webp: “Baguettes - stonesoup.jpg”, Jules / stonesoup, CC BY 2.0. https://commons.wikimedia.org/wiki/File:Baguettes_-_stonesoup.jpg
+- semillas.webp: “Home baked rye bread with sunflower seeds, Brisbane, 2023.jpg”, Kgbo, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Home_baked_rye_bread_with_sunflower_seeds,_Brisbane,_2023.jpg
+  Hogaza uses the 5712 × 4284 original, cropped and resized to 2400px. Baguettes use the verified 1920 × 2885 Commons rendition, rotated to landscape without enlargement (2885 × 1920 output). Seed bread uses the verified 1920 × 1440 rendition, cropped to 1830 × 1245. Original downloads for the replacement images were rate limited; the selected renditions provide sufficient pixels for the displayed catalogue widths. All three have modest light, saturation and sharpening adjustments. Derived assets retain their corresponding licenses; attribution and license links are visible in the catalogue. License terms: https://creativecommons.org/publicdomain/zero/1.0/ https://creativecommons.org/licenses/by-sa/4.0/ https://creativecommons.org/licenses/by/2.0/
   Local variable font files from google/fonts ofl/bricolagegrotesque and ofl/sourcesans3, SIL Open Font License 1.1, bundled alongside each font.

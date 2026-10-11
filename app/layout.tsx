@@ -32,7 +32,7 @@ export default function RootLayout({
         <DraftProvider>
           <Header />
           {children}
-          <footer className="mx-auto flex max-w-[1328px] flex-wrap items-center justify-between gap-2 border-t border-obrador/15 px-5 py-5 text-sm md:px-10 lg:px-12">
+          <footer className="mx-auto flex max-w-[1328px] flex-wrap items-center justify-between gap-1 border-t border-obrador/15 px-5 py-4 text-sm md:gap-2 md:px-10 md:py-5 lg:px-12">
             <span className="font-heading text-xl font-semibold tracking-tight">
               Miga. El pan, en primer plano.
             </span>
